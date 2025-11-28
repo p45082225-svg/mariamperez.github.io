@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marian del Carmen Perez Machaca</title>
+    <meta name="author" content="Marian del Carmen Perez Machaca">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="6Cc_my7uS0GmCRh_MmS6AHVdbbSmi6UlAqk_9ShFVjk" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #f0f4ff;
+            padding-top: 80px;
+        }
+
+        /* ===== HEADER / BARRA DE NAVEGACIÓN ===== */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #3d5a9e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo span {
+            color: #ffc627;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #3d5a9e;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #ffc627;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 3px;
+            background-color: #2c3e50;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Utilidad para el centrado de secciones */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Títulos de sección */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        .section-title h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #667eea;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* ===== SECCIÓN HERO ===== */
+        .hero-section {
+            position: relative;
+            min-height: calc(100vh - 80px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 100px;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"%3E%3Crect fill="%23465f9e" width="1920" height="1080"/%3E%3C/svg%3E');
+            opacity: 0.4;
+        }
+
+        .geometric-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .shape1 {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            left: -100px;
+            transform: rotate(-25deg);
+        }
+
+        .shape2 {
+            width: 600px;
+            height: 400px;
+            bottom: -50px;
+            right: 200px;
+            transform: rotate(15deg);
+        }
+
+        .shape3 {
+            width: 300px;
+            height: 300px;
+            top: 100px;
+            right: -50px;
+            transform: rotate(-10deg);
+        }
+
+        .blue-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.85) 100%);
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .greeting {
+            font-size: 4rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 0;
+            line-height: 1.1;
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 35px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 45px;
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 18px;
+        }
+
+        .btn {
+            padding: 15px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #ffd700;
+            color: #5a4ba2;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffe44d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        .image-content {
+            flex-shrink: 0;
+            margin-right: 50px;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .profile-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid #ffd700;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== SECCIÓN: SOBRE MÍ ===== */
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            max-width: 100%;
+        }
+        
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .about-text p {
+            font-size: 1rem;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        .about-image-section {
+            flex-shrink: 0;
+            width: 300px;
+            text-align: center;
+        }
+
+        .about-image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.1);
+            text-align: center;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .info-card ul li {
+            font-size: 0.95rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .info-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .stats-grid {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid #e0e6ed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            min-width: 180px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: #5a6c7d;
+            font-weight: 500;
+        }
+
+        .about-image-wrapper {
+            flex-shrink: 0;
+            width: 40%;
+            max-width: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ===== SECCIÓN PROYECTOS ===== */
+        .projects-section {
+            background-color: #f0f4ff;
+            padding: 80px 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #5a6c7d;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .cycles-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cycle-item {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .cycle-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .cycle-header {
+            padding: 30px 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cycle-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cycle-header:hover::before {
+            opacity: 1;
+        }
+
+        .cycle-header:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6a3ba2 100%);
+        }
+
+        .cycle-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cycle-header h3::before {
+            content: '📚';
+            font-size: 1.8rem;
+        }
+
+        .cycle-toggle {
+            font-size: 2rem;
+            font-weight: 700;
+            transition: transform 0.4s ease;
+            z-index: 1;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .cycle-toggle.active {
+            transform: rotate(135deg);
+            background: rgba(255, 215, 0, 0.3);
+        }
+
+        .cycle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .cycle-content.active {
+            max-height: 2000px;
+        }
+
+        .courses-list {
+            padding: 35px;
+            background: linear-gradient(to bottom, #f0f4ff 0%, white 100%);
+        }
+
+        .courses-list ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .courses-list ul li {
+            font-size: 1rem;
+            color: #2c3e50;
+            padding: 16px 24px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .courses-list ul li::before {
+            content: '✓';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .courses-list ul li:hover {
+            background: linear-gradient(135deg, #e8ebff 0%, white 100%);
+            transform: translateX(8px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+            border-left-width: 6px;
+        }
+
+        .courses-list ul li:hover::before {
+            opacity: 1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 28px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+        }
+
+        .tag-blue { background-color: #e3f2fd; color: #1976d2; }
+        .tag-green { background-color: #e8f5e9; color: #388e3c; }
+        .tag-purple { background-color: #f3e5f5; color: #7b1fa2; }
+        .tag-orange { background-color: #fff3e0; color: #f57c00; }
+        .tag-red { background-color: #ffebee; color: #c62828; }
+        .tag-yellow { background-color: #fffde7; color: #f9a825; }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: #3d5a9e;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #2a4278;
+            transform: translateX(5px);
+        }
+
+        .project-link::after {
+            content: '→';
+            margin-left: 8px;
+            font-size: 1.2rem;
+            transition: margin-left 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            margin-left: 12px;
+        }
+
+        /* ===== SECCIÓN PROFESORES Y COMPAÑEROS ===== */
+        .people-section {
+            background-color: white;
+            padding: 80px 20px;
+        }
+
+        .people-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-block {
+            margin-bottom: 60px;
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-block h2 {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .section-block h2::before {
+            content: '👥';
+            font-size: 2.2rem;
+        }
+
+        .people-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .column-header {
+            font-size: 1.4rem;
+            color: #764ba2;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .people-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .person-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 24px;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.05rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .person-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+            transition: width 0.3s ease;
+        }
+
+        .person-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+            border-left-width: 6px;
+            color: #667eea;
+        }
+
+        .person-item:hover::before {
+            width: 100%;
+        }
+
+        .person-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .person-item:hover .person-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #ffd700 0%, #ffe44d 100%);
+        }
+
+        .person-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .person-name {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .external-link-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .person-item:hover .external-link-icon {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        /* ===== SECCIÓN CONTACTO ===== */
+        .contact-section {
+            background-color: #f0f4ff;
+            padding: 80px 20px 100px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e8ebff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 18px;
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            color: #5a6c7d;
+        }
+
+        .contact-value a {
+            color: #5a6c7d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #667eea;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #667eea;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section p {
+            font-size: 0.95rem;
+            color: #b8c5d6;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b8c5d6;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #667eea;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #ffd700;
+            transform: translateY(-3px);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #b8c5d6;
+        }
+
+        .footer-bottom a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #ffd700;
+        }
+
+        /* ===== CHAT WIDGET FLOTANTE ===== */
+        .chat-widget {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background-color: #25D366;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .chat-widget:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+            background-color: #128C7E;
+        }
+
+        .chat-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease-in-out;
+                gap: 0;
+            }
+
+            .nav-menu.open {
+                transform: translateY(0);
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 15px 0;
+            }
+
+            .nav-menu a::after {
+                height: 0;
+            }
+
+            .hero-section {
+                flex-direction: column-reverse;
+                padding: 100px 20px 60px;
+                text-align: center;
+                min-height: auto;
+            }
+
+            .content-wrapper {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .text-content {
+                max-width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .greeting, .name {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+
+            .name {
+                margin-bottom: 20px;
+            }
+
+            .image-content {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .profile-image-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .button-group {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text h2 {
+                text-align: center;
+            }
+
+            .about-text p {
+                max-width: 100%;
+            }
+
+            .about-image-wrapper {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                text-align: left;
+            }
+
+            .info-card h3 {
+                text-align: center;
+            }
+
+            .stat-card {
+                padding: 15px 20px;
+                min-width: unset;
+                flex: 1;
+            }
+            
+            .stats-grid {
+                justify-content: space-around;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .people-two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .section-block h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-section {
+                padding: 50px 20px;
+            }
+
+            .greeting, .name {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .profile-image-wrapper {
+                width: 280px;
+                height: 280px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                padding: 24px;
+            }
+
+            .contact-info, .contact-form {
+                padding: 30px;
+            }
+
+            .contact-info h2, .contact-form h2 {
+                font-size: 1.4rem;
+            }
+
+            .chat-widget {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .stats-grid {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .stat-card {
+                min-width: unset;
+                padding: 15px 20px;
+            }
+
+            .about-image-wrapper {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#inicio" class="logo">
+                <img src="https://i.imgur.com/Y1LsJ84.png" alt="UCSP" style="height: 50px; object-fit: contain;">
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+                    <li><a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a></li>
+                    <li><a href="#proyectos" onclick="closeMenu()">Proyectos</a></li>
+                    <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section" id="inicio">
+        <div class="background-image"></div>
+        <div class="geometric-overlay">
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+        </div>
+        <div class="blue-overlay"></div>
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1 class="greeting">Hola, soy</h1>
+                <h2 class="name">Marian del Carmen Pérez Machaca</h2>
+                <p class="subtitle">Estudiante de Ingeniería Empresarial</p>
+                <p class="description">
+                    Estudiante de la Universidad Católica San Pablo (UCSP), apasionada por la gestión empresarial, los recursos humanos y la estrategia empresarial. Busco aplicar mis conocimientos y habilidades para generar un impacto positivo.
+                </p>
+                <div class="button-group">
+                    <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                    <a href="#proyectos" class="btn btn-secondary">Ver Cursos</a>
+                </div>
+            </div>
+            <div class="image-content">
+                <div class="profile-image-wrapper">
+                    <div class="profile-circle">
+                        <img src="https://i.imgur.com/vVVCKPW.png" alt="Marian del Carmen Perez Machaca" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="sobre-mi">
+        <div class="container">
+            <div class="section-title">
+                <h1>Sobre Mí</h1>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Mi Perfil</h2>
+                    <p>
+                        Soy una estudiante entusiasta de Ingeniería Empresarial de la Universidad Católica San Pablo, cursando el **tercer ciclo**. Mi objetivo es combinar la gestión de recursos humanos y la estrategia empresarial para optimizar procesos y alcanzar metas organizacionales.
+                    </p>
+                    <p>
+                        Durante mi formación, he desarrollado habilidades intermedias en herramientas clave para el análisis de datos y la gestión, como Microsoft Excel, RStudio y SPSS. Estoy constantemente buscando oportunidades para aplicar y expandir mis conocimientos en áreas de alto impacto como el marketing digital y las finanzas corporativas.
+                    </p>
+                    <p>
+                        Valoro la **responsabilidad** y el **compromiso** como pilares de mi trabajo, y mi enfoque en la **innovación constante** me impulsa a buscar soluciones creativas y eficientes en cualquier proyecto.
+                    </p>
+                    <p>
+                        Actualmente busco oportunidades de prácticas o proyectos que me permitan contribuir en el área de recursos humanos y estrategia empresarial. Me caracterizo por ser proactiva, responsable y con gran capacidad de trabajo en equipo.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Semestres cursados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Cursos completados</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-section">
+                    <img src="https://i.imgur.com/vVVCKPW.png" alt="Marian Pérez Machaca">
+                </div>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul>
+                        <li>Microsoft Excel - Intermedio</li>
+                        <li>Microsoft PowerPoint - Intermedio</li>
+                        <li>Microsoft Word - Intermedio</li>
+                        <li>SPSS - Intermedio</li>
+                        <li>RStudio - Intermedio</li>
+                        <li>Canvas - Intermedio</li>
+                        <li>Inteligencia Artificial - Intermedio</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Valores</h3>
+                    <ul>
+                        <li>Responsabilidad</li>
+                        <li>Integridad</li>
+                        <li>Compromiso</li>
+                        <li>Excelencia académica</li>
+                        <li>Trabajo en equipo</li>
+                        <li>Innovación constante</li>
+                    </ul>
+                    <br>
+                    <h3>Intereses</h3>
+                    <ul>
+                        <li>Gestión empresarial</li>
+                        <li>Marketing digital</li>
+                        <li>Finanzas corporativas</li>
+                        <li>Análisis de datos</li>
+                        <li>Emprendimiento</li>
+                        <li>Estrategia de negocios</li>
+                    </ul>
+                    <br>
+                    <h3>Idiomas</h3>
+                    <ul>
+                        <li>Español - Nativo</li>
+                        <li>Inglés - Intermedio B1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="proyectos">
+        <div class="container">
+            <div class="section-title">
+                <h1>Cursos Académicos</h1>
+            </div>
+            <div class="cycles-container">
+
+                <div class="cycle-item">
+                    <div class="cycle-header" onclick="toggleCycle(this)">
+                        <h3>Ciclo I</h3>
+                        <span class="cycle-toggle">+</span>
+                    </div>
+                    <div class="cycle-content">
+                        <div class="courses-list">
+                            <ul>
+                                <li>Comunicación I</li>
+                                <li>Introducción a la Vida Universitaria</li>
+                                <li>Metodología del Estudio</li>
+                                <li>Matemática Básica</li>
+                                <li>Fundamentos de Administración</li>
+                                <li>Economía General</li>
+                                <li>Contabilidad para Administradores</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-header" onclick="toggleCycle(this)">
+                        <h3>Ciclo II</h3>
+                        <span class="cycle-toggle">+</span>
+                    </div>
+                    <div class="cycle-content">
+                        <div class="courses-list">
+                            <ul>
+                                <li>Comunicación II</li>
+                                <li>Introducción a la Filosofía</li>
+                                <li>Matemática Musical</li>
+                                <li>Oratoria</li>
+                                <li>Teatro</li>
+                                <li>Álgebra y Geometría</li>
+                                <li>Derecho Empresarial</li>
+                                <li>Fundamentos de Marketing</li>
+                                <li>Pensamiento Crítico e Innovación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-header" onclick="toggleCycle(this)">
+                        <h3>Ciclo III</h3>
+                        <span class="cycle-toggle">+</span>
+                    </div>
+                    <div class="cycle-content">
+                        <div class="courses-list">
+                            <ul>
+                                <li>Antropología Filosófica</li>
+                                <li>Cálculo Diferencial</li>
+                                <li>Estadística Descriptiva y Probabilidades</li>
+                                <li>Comportamiento Organizacional</li>
+                                <li>Sistema de Información Gerencial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-header" onclick="toggleCycle(this)">
+                        <h3>Ciclo IV</h3>
+                        <span class="cycle-toggle">+</span>
+                    </div>
+                    <div class="cycle-content">
+                        <div class="courses-list">
+                            <ul>
+                                <li>Teología I</li>
+                                <li>Matemática Financiera</li>
+                                <li>Econometría</li>
+                                <li>Estrategia Empresarial I</li>
+                                <li>Finanzas I</li>
+                                <li>Investigación de Mercados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="people-section">
+        <div class="people-container">
+
+            <div class="section-block">
+                <h2>Profesores Destacados</h2>
+                <div class="people-list">
+                    
+                    <a href="https://pe.linkedin.com/in/santiago-valdiviezo-1a4baa380" target="_blank" class="person-item">
+                        <div class="person-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="person-name">Santiago Valdiviezo</span>
+                        <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/hector-ricardo-rodriguez-gaytan/" target="_blank" class="person-item">
+                        <div class="person-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="person-name">Héctor Ricardo Rodriguez Gaytán</span>
+                        <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>Compañeros</h2>
+                <div class="people-two-columns">
+                    
+                    <div>
+                        <h3 class="column-header">GitHub</h3>
+                        <div class="people-list">
+                            <a href="https://marializcadenashuillcapacco.github.io/pagina-web/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Mariali Zcadenas Huillcapacco</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                            <a href="https://chaskacandia.github.io/portafolio/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Chaska Candia</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="column-header">LinkedIn</h3>
+                        <div class="people-list">
+                            <a href="https://www.linkedin.com/in/traicy-pacco-colque-01469b386/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Traicy Pacco Colque</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/santiago-velasco-rivera/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Santiago Velasco</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h1>Contacto</h1>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">
+                                <a href="mailto:mperezm10@ucsp.edu.pe">mperezm10@ucsp.edu.pe</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.23 1.12.37 2.32.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Teléfono</div>
+                            <div class="contact-value">
+                                <a href="tel:+51994433226">+51 994 433 226</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Ubicación</div>
+                            <div class="contact-value">Arequipa, Perú</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">LinkedIn</div>
+                            <div class="contact-value">
+                                <a href="https://www.linkedin.com/in/marian-del-carmen-perez-machaca-338b55273" target="_blank">Perfil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form">
+                    <h2>Envíame un Mensaje</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Marian del Carmen</h3>
+                <p>
+                    Estudiante de Ingeniería Empresarial con enfoque en recursos humanos y estrategia. Comprometida con la excelencia y la innovación.
+                </p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Cursos Académicos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/marian-del-carmen-perez-machaca-338b55273" target="_blank" class="social-icon" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/tu-usuario-github" target="_blank" class="social-icon" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/tu-usuario-instagram" target="_blank" class="social-icon" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm0 2C5.7 4 4 5.7 4 7.8v8.4c0 2.1 1.7 3.8 3.8 3.8h8.4c2.1 0 3.8-1.7 3.8-3.8V7.8c0-2.1-1.7-3.8-3.8-3.8H7.8zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.7-8.3a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Marian del Carmen Perez Machaca. Todos los derechos reservados.</p>
+            <p>Hecho con <span style="color: #667eea;">❤️</span> para la UCSP.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/+51994433226" target="_blank" class="chat-widget" title="Chatea por WhatsApp">
+        <span class="chat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 0 0-9.9 11.2l-.7 2.4-2.2 7.8 7.8-2.2 2.4-.7A10 10 0 1 0 12 2zm3.6 13.9c-.3.8-.9 1.4-1.6 1.7-.5.2-1.1.3-1.6.3-.6 0-1.1-.1-1.6-.3-.7-.3-1.3-.9-1.6-1.7-.2-.5-.3-1-.3-1.6 0-.6.1-1.1.3-1.6.3-.7.9-1.3 1.7-1.6.5-.2 1-.3 1.6-.3.6 0 1.1.1 1.6.3.7.3 1.3.9 1.6 1.7.2.5.3 1 .3 1.6 0 .6-.1 1.1-.3 1.6z"/>
+            </svg>
+        </span>
+        WhatsApp
+    </a>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+        });
+
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            if (navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                menuToggle.classList.remove('open');
+            }
+        }
+
+        function toggleCycle(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.cycle-toggle');
+            
+            content.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            const sections = document.querySelectorAll('section');
+
+            function setActiveLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink();
+        });
+    </script>
+</body>
+</html>
